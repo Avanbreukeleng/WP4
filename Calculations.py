@@ -42,6 +42,25 @@ Pbry = kbr * Ftu * Abr
 Pty = kty * Abr * Fty
 
 
+
+Fa=4581.107 # Fy in Newtons
+Ftr= 1471 #Fz in Newtons, taken as positive
+
+Mins = np.minimum(Pbry,Pty) #finds minimum of Pbry and Pty 
+
+Ra=Fa/Mins
+Rtr=Ftr/Mins
+
+Eq12=Ra**1.6+Rtr**1.6
+
+MS = 1/Eq12**0.625-1
+
+    
+MSpositive=MS[MS>=0] #takes only positive values of M.S
+MSlessthan = MSpositive[MSpositive<=0.5] #takes only positive values that are less than 0.5
+
+
+
 A1=t*(W-D/np.sqrt(2))/2
 A4=A1
 A2=t*(W-D)/2
