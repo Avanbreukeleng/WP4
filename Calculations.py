@@ -12,3 +12,9 @@ W = D + w_small
 
 
 A1=t*(W-D/np.sqrt(2))/2
+A4=A1
+A2=t*(W-D)/2
+A3=A2
+Aav=6/(3/A1+1/A2+1/A3+1/A4)
+Abr=D*t
+xaxis15 = Aav/Abr #use this for the x-axis value of graph 15
