@@ -46,7 +46,7 @@ Pty = kty * Abr * Fty
 Fa=4581.107 # Fy in Newtons
 Ftr= 1471 #Fz in Newtons, taken as positive
 
-Mins = np.minimum(Pbry,Py) #finds minimum of Pbry and Pty 
+Mins = np.minimum(Pbry,Py) #finds minimum of Pbry and Py 
 
 Ra=Fa/Mins
 Rtr=Ftr/Pty
