@@ -3,9 +3,24 @@ import numpy as np
 
 L = 100
 
-t = np.linspace(10**-3,0.02,L) #thickness from 1mm to 2 cm
-w_small = np.linspace(10**-3,0.03,L) #distance between inner hole and outer radius
-D = np.linspace(0.01,0.10,L) #hole diameter
+t_base = np.linspace(10**-3,0.02,L) #thickness from 1mm to 2 cm
+w_small_base = np.linspace(10**-3,0.03,L) #distance between inner hole and outer radius
+D_base = np.linspace(0.01,0.10,L) #hole diameter
+
+t = []
+D = []
+w_small = []
+
+for ti in t_base:
+    for w_smalli in w_small_base:
+        for Di in D_base:
+            t.append(ti)
+            w_small.append(w_smalli)
+            D.append(Di)
+t = np.array(t)
+w_small = np.array(w_small)
+D = np.array(D)
+
 W = D + w_small
 e = w_small + D/2
 eD = e/D
