@@ -12,4 +12,3 @@ W = D + w_small
 
 
 A1=t*(W-D/np.sqrt(2))/2
-sdgsd
