@@ -68,13 +68,14 @@ Eq12=Ra**1.6+Rtr**1.6
 
 MS = 1/Eq12**0.625-1
 
+MST=MS.reshape(len(MS),1)
 
-values=np.append(PyT,PbryT,PtyT,tT,DT,axis=1)
+
     
 MSpositive=MS[MS>=0] #takes only positive values of M.S
 MSlessthan = MSpositive[MSpositive<=0.5] #takes only positive values that are less than 0.5
 
-
+values=np.append(PyT,PbryT,PtyT,tT,DT,MST,axis=1)
 
 
 A1=t*(W-D/np.sqrt(2))/2
