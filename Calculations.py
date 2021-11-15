@@ -28,6 +28,38 @@ WD = W/D
 
 At = (W-D)*t
 Abr = D*t
+
+
+
+'''Graph Computation'''
+#graph transformation
+def read(file):
+    x = ()
+    y = ()
+    f = open(file,"r")
+    
+    for line in f.readlines():
+        numbers = line.split("; ")
+        x.append(float(numbers[0]))
+        y.append(float(numbers[1]))    
+    f.close()
+    return x, y
+
+x,y = read("Kty and Aav Abr.txt")
+
+
+A1=t*(W-D/np.sqrt(2))/2
+A4=A1
+A2=t*(W-D)/2
+A3=A2
+Aav=6/(3/A1+1/A2+1/A3+1/A4)
+Abr=D*t
+xaxis15 = Aav/Abr #use this for the x-axis value of graph 15
+
+
+
+'''Rest of computation'''
+
 #Stress concentration
 kt = 1
 kbr = 1
@@ -76,12 +108,3 @@ MSpositive=MS[MS>=0] #takes only positive values of M.S
 MSlessthan = MSpositive[MSpositive<=0.5] #takes only positive values that are less than 0.5
 
 values=np.append(PyT,PbryT,PtyT,tT,DT,MST,axis=1)
-
-
-A1=t*(W-D/np.sqrt(2))/2
-A4=A1
-A2=t*(W-D)/2
-A3=A2
-Aav=6/(3/A1+1/A2+1/A3+1/A4)
-Abr=D*t
-xaxis15 = Aav/Abr #use this for the x-axis value of graph 15
