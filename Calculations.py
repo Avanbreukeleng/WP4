@@ -47,7 +47,14 @@ Pty = kty * Abr * Fty
 Fa=4581.107 # Fy in Newtons
 Ftr= 1471 #Fz in Newtons, taken as positive
 
-Mins = np.minimum(Pbry,Py) #finds minimum of Pbry and Py 
+
+Pbry = np.arange(10,20,1)
+Py= np.arange(1,30,3)
+Pty = np.arange(1,30,3)
+values=[]
+
+    
+Mins = np.minimum(Pbry,Py) #finds minimum of Pbry and Pty 
 
 Ra=Fa/Mins
 Rtr=Ftr/Pty
@@ -56,9 +63,13 @@ Eq12=Ra**1.6+Rtr**1.6
 
 MS = 1/Eq12**0.625-1
 
+for i in range(len(Pbry)):
+    a=(Pbry[i],Py[i],Pty[i],t[i],D[i],W[i].MS[i])
+    values.append(a)
     
 MSpositive=MS[MS>=0] #takes only positive values of M.S
 MSlessthan = MSpositive[MSpositive<=0.5] #takes only positive values that are less than 0.5
+
 
 
 
