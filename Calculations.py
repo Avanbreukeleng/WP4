@@ -25,6 +25,7 @@ W = D + w_small
 e = w_small + D/2
 eD = e/D
 WD = W/D
+
 At = (W-D)*t
 Abr = D*t
 #Stress concentration
