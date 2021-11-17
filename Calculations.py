@@ -34,14 +34,16 @@ Abr = D*t
 '''Graph Computation'''
 #graph transformation
 def read(file):
-    x = ()
-    y = ()
+    x = []
+    y = []
     f = open(file,"r")
     
     for line in f.readlines():
+        line = line.replace(',','.')
         numbers = line.split("; ")
-        x.append(float(numbers[0]))
-        y.append(float(numbers[1]))    
+        numbers[1] = numbers[1].strip('\n')
+        x.append(float(numbers[0] ))
+        y.append(float(numbers[1]))
     f.close()
     return x, y
 
