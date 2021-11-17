@@ -105,6 +105,7 @@ PyT=Py.reshape(len(Py),1)
 PtyT=Pty.reshape(len(Pty),1)
 tT=t.reshape(len(t),1)
 DT=D.reshape(len(D),1)
+WT=W.reshape(len(W),1)
 
 
 
@@ -121,4 +122,4 @@ MS = 1/Eq12**0.625-1
 MST=MS.reshape(len(MS),1)
 
 
-values=np.hstack((PyT,PbryT,PtyT,tT,DT,MST))
+values=np.hstack((PyT,PbryT,PtyT,tT,DT,WT,MST))
