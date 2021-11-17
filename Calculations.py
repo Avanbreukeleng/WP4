@@ -105,8 +105,4 @@ MS = 1/Eq12**0.625-1
 MST=MS.reshape(len(MS),1)
 
 
-    
-MSpositive=MS[MS>=0] #takes only positive values of M.S
-MSlessthan = MSpositive[MSpositive<=0.5] #takes only positive values that are less than 0.5
-
-values=np.append(PyT,PbryT,PtyT,tT,DT,MST,axis=1)
+values=np.hstack(PyT,PbryT,PtyT,tT,DT,MST)
