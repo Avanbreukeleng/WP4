@@ -123,3 +123,4 @@ MST=MS.reshape(len(MS),1)
 
 
 values=np.hstack((PyT,PbryT,PtyT,tT,DT,WT,MST))
+valuesopt=values[values[:, -1] >= 0]
