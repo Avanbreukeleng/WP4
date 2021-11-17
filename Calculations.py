@@ -81,7 +81,7 @@ xaxis15 = Aav/Abr #use this for the x-axis value of graph 15
 #Stress concentration
 kt = 1
 kbr = 1
-kty = 1
+kty = kty(xaxis15)
 #Material properties
 Fty = 414 * 10**6 #Pa
 Ftu = 483 * 10**6 #Pa
@@ -124,3 +124,4 @@ MST=MS.reshape(len(MS),1)
 
 values=np.hstack((PyT,PbryT,PtyT,tT,DT,WT,MST))
 valuesopt=values[values[:, -1] >= 0]
+#mass calculations
