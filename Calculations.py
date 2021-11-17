@@ -1,6 +1,6 @@
 #NEW File
 import numpy as np
-
+from scipy import interpolate
 L = 100
 
 t_base = np.linspace(10**-3,0.02,L) #thickness from 1mm to 2 cm
@@ -45,9 +45,25 @@ def read(file):
         x.append(float(numbers[0] ))
         y.append(float(numbers[1]))
     f.close()
-    return x, y
+    function = interpolate.interp1d(x, y)
+    return function
 
-x,y = read("Kty and Aav Abr.txt")
+kty = read("Kty and Aav Abr.txt")
+kt1_die = read("Kt and DW curve 1.txt")
+kt2_plate = read("Kt and DW curve 2.txt")
+kt3_extrusion = read("Kt and DW curve 3.txt")
+kt4_bar = read("Kt and DW curve 4.txt")
+kt5_hand = read("Kt and DW curve 5.txt")
+kt6_alloy = read("Kt and DW curve 6.txt")
+kt7_mag = read("Kt and DW curve 7.txt")
+kbry_02 = read("Kbry and eD for tD 0.2.txt")
+kbry_03 = read("Kbry and eD for tD 0.3.txt")
+kbry_04 = read("Kbry and eD for tD 0.4.txt")
+kbry_06 = read("Kbry and eD for tD 0.06.txt")
+kbry_08 = read("Kbry and eD for tD 0.08.txt")
+kbry_010 = read("Kbry and eD for tD 0.10.txt")
+kbry_012 = read("Kbry and eD for tD 0.12.txt")
+kbry_015 = read("Kbry and eD for tD 0.15.txt")
 
 
 A1=t*(W-D/np.sqrt(2))/2
