@@ -121,4 +121,4 @@ MS = 1/Eq12**0.625-1
 MST=MS.reshape(len(MS),1)
 
 
-values=np.hstack(PyT,PbryT,PtyT,tT,DT,MST)
+values=np.hstack((PyT,PbryT,PtyT,tT,DT,MST))
