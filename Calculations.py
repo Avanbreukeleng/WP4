@@ -25,7 +25,7 @@ W = D + w_small
 e = w_small + D/2
 eD = e/D
 WD = W/D
-
+tD = t/D
 At = (W-D)*t
 Abr = D*t
 
