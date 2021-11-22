@@ -171,7 +171,7 @@ values=np.hstack((PyT,PbryT,PtyT,values,MST))
 valuesopt=values[values[:, -1] >= 0]
 valuesopt=valuesopt[valuesopt[:, -1] <= 0.5]
 sortedMS=valuesopt[np.argsort(valuesopt[:, -1])]
-print(valuesopt[0,:])
+print(sortedMs[0,:])
 sortedMass=sortedMS[np.argsort(sortedMS[:, -3])]
-print(valuesopt[0,:])
+print(sortedMass[0,:])
 #mass calculations, use values[:, 3 to 5]
