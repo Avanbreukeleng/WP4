@@ -32,7 +32,7 @@ Abr = D*t
 '''Mass Calculation'''
 rho = 2.79E3
 V   = t * (0.5 * np.pi * (W / 2) ** 2 + W * 0.8 - (np.pi * (D / 2) ** 2))
-Mass = rho * V
+m = rho * V
 
 
 '''Graph Computation'''
@@ -87,8 +87,10 @@ AbrT=Abr.reshape(len(Abr),1)
 eDT=eD.reshape(len(eD),1)
 tDT=tD.reshape(len(tD),1)
 WDT=WD.reshape(len(WD),1)
+mT = m.reshape(len(m),1)
 
-values = np.hstack((tT,DT,WT,AT,AbrT,eDT,tDT,WDT,xaxis15T))
+values = np.hstack((tT,DT,WT,AT,AbrT,eDT,tDT,WDT,mT,xaxis15T))
+#values = np.hstack((tT,DT,WT,AT,AbrT,eDT,tDT,WDT,xaxis15T))
 values = values[values[:, -1] < 1.36]
 values = values[values[:, 5] < 4]
 values = values[values[:, 5] > 0.5]
@@ -162,12 +164,14 @@ Eq12=Ra**1.6+Rtr**1.6
 MS = 1/Eq12**0.625-1
 
 MST=MS.reshape(len(MS),1)
-MassT=Mass.reshape(len(Mass),1)
+#MassT=Mass.reshape(len(Mass),1)
 
-values=np.hstack((PyT,PbryT,PtyT,values,MassT,MST))
+values=np.hstack((PyT,PbryT,PtyT,values,MST))
 #values=np.hstack((PyT,PbryT,PtyT,tT,DT,WT,MST))
 valuesopt=values[values[:, -1] >= 0]
 valuesopt=valuesopt[valuesopt[:, -1] <= 0.5]
 sortedMS=valuesopt[np.argsort(valuesopt[:, -1])]
-sortedMass=sortedMS[np.argsort(sortedMS[:, -2])]
+print(valuesopt[0,:])
+sortedMass=sortedMS[np.argsort(sortedMS[:, -3])]
+print(valuesopt[0,:])
 #mass calculations, use values[:, 3 to 5]
