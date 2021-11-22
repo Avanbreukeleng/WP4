@@ -120,8 +120,8 @@ for value in values[:,6]:
 
 kty = kty(values[:,-1])
 #Material properties
-Fty = 414 * 10**6 #Pa
-Ftu = 483 * 10**6 #Pa
+Fty = 365422136.54 #Pa
+Ftu = 413685437.59 #Pa
 density = 2800 #kg/m^3
 
 #Allowable forces
