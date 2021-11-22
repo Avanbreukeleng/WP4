@@ -29,6 +29,10 @@ tD = t/D
 At = (W-D)*t
 Abr = D*t
 
+'''Mass Calculation'''
+rho = 2.79E3
+V   = t * (0.5 * math.pi * (W / 2) ** 2 + W * 0.8 - (math.pi * (D / 2) ** 2))
+Mass = rho * V
 
 
 '''Graph Computation'''
